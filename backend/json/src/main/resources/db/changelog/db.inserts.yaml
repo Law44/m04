@@ -18,3 +18,21 @@ databaseChangeLog:
               - column:
                   name: image
                   value: https://pbs.twimg.com/media/GKVpB10W8AAl5Hf?format=jpg&name=large
+        - insert:
+            tableName: home
+            columns:
+              - column:
+                  name: name
+                  value: Casa Pepe
+              - column:
+                  name: pet_id
+                  value: 1
+        - insert:
+            tableName: home
+            columns:
+              - column:
+                  name: name
+                  value: Casa Law
+              - column:
+                  name: pet_id
+                  value: 1

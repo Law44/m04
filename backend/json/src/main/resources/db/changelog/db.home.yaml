@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 20240422-001
+      id: 20240427-001
       author: Yago Morales Ares
       changes:
         - createTable:
-            tableName: pet
+            tableName: home
             columns:
               - column:
                   name: id
@@ -16,15 +16,15 @@ databaseChangeLog:
                   name: name
                   type: text
               - column:
-                  name: species
-                  type: text
-              - column:
-                  name: age
+                  name: pet_id
                   type: INTEGER
-              - column:
-                  name: image
-                  type: text
-  - include:
-      file: db/changelog/db.home.yaml
-  - include:
-      file: db/changelog/db.inserts.yaml
+        - addForeignKeyConstraint:
+            baseTableName: home
+            baseColumnNames:
+              - pet_id
+            constraintName: fk_pet_id
+            referencedTableName: pet
+            referencedColumnNames:
+              - id
+            onDelete: CASCADE
+            onUpdate: CASCADE

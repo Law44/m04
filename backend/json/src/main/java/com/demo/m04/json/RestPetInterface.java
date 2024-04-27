@@ -13,5 +13,11 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 public interface RestPetInterface extends PagingAndSortingRepository<PetEntity, Long>, CrudRepository<PetEntity, Long> {
 
     List<PetEntity> findByName(@Param("name") String name);
+
+     // Add a method to save a PetEntity along with its associated HomeEntity
+     default PetEntity saveWithHome(PetEntity petEntity, List<HomeEntity> homeEntity) {
+        petEntity.setHomes(homeEntity); // Set the HomeEntity for the pet
+        return save(petEntity); // Save the petEntity
+    }
     
 }
