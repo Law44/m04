@@ -3,9 +3,12 @@ import axios from 'axios';
 
 export default function Modal({ onClose, onSend }) {
     const [text, setText] = useState('');
+    const headers = {
+        'Content-Type': 'application/json', 
+    };
 
     const handleSend = () => {
-        axios.post('http://localhost:8080/endpoint', { data: text })
+        axios.post('http://localhost:8080/pets', text, {headers})
             .then(response => {
                 console.log('Data sent successfully:', response);
                 onClose()
