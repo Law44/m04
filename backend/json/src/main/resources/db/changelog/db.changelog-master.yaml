@@ -24,3 +24,5 @@ databaseChangeLog:
               - column:
                   name: image
                   type: text
+  - include:
+      file: db/changelog/db.inserts.yaml
