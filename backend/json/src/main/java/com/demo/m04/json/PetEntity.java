@@ -1,5 +1,6 @@
 package com.demo.m04.json;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,7 +24,7 @@ public class PetEntity {
     private String image;
     private Integer age;
 
-    @OneToMany(mappedBy = "pet")
+    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
     private List<HomeEntity> homes;
     
 }

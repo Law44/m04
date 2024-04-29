@@ -18,7 +18,7 @@ public class HomeEntity {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name="petId", nullable=false)
+    @JoinColumn(name="pet_id", updatable = true)
     private PetEntity pet;
 
 
