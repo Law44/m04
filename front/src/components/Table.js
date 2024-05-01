@@ -23,7 +23,7 @@ export default function List() {
         let list = [];
 
         homeList.forEach(home => {
-            if (home.id_pet === parseInt(petId)){
+            if (home.pet_id === parseInt(petId)){
                 list.push(home.name);
             }
         });

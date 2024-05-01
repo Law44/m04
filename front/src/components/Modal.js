@@ -40,7 +40,7 @@ export default function Modal({ onClose }) {
                     <button onClick={handleSendPet}>Enviar Mascota</button>
                 </div>
                 <div>
-                    <button onClick={handleSendHome}>Enviar Casa</button>
+                    <button onClick={handleSendHome}>Enviar Lista de casas</button>
                 </div>
             </div>
         </div>

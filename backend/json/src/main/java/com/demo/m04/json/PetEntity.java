@@ -1,5 +1,6 @@
 package com.demo.m04.json;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,9 +17,15 @@ public class PetEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(nullable = false)
     private String name;
-    private String species;
-    private String image;
-    private Integer age;
 
+    @Column(nullable = false)
+    private String species;
+
+    @Column(nullable = false)
+    private String image;
+
+    @Column(nullable = false)
+    private Integer age;
 }
