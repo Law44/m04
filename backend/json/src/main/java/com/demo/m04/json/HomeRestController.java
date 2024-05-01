@@ -14,13 +14,13 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*")
-public class PetRestController {
+public class HomeRestController {
 
-    final RestPetInterface restPetInterface;
+    final RestHomeInterface restHomeInterface;
     
-    @PostMapping("/pets/list")
-    public ResponseEntity<Void> postMethodName(@RequestBody List<PetEntity> pet)  {
-        restPetInterface.saveAll(pet);
+    @PostMapping("/homes/list")
+    public ResponseEntity<Void> postMethodName(@RequestBody List<HomeEntity> home)  {
+        restHomeInterface.saveAll(home);
         return ResponseEntity.created(null).build();
     }
 
